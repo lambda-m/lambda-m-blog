@@ -1,0 +1,16 @@
+baseURL = 'https://lambda-m.nl/blog/'
+languageCode = 'en-us'
+title = 'Lambda M'
+theme = 'HugoTeX'
+enableInlineShortcodes = true
+
+[Params.Author]
+  name = "Maarten van der Woord"
+  abstract = """
+  I'm an idiot.
+  """
+[pagination]
+  pagerSize = 3
+
+[Params]
+ twittercard = true
