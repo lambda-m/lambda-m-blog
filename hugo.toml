@@ -13,4 +13,6 @@ enableInlineShortcodes = true
   pagerSize = 3
 
 [Params]
- twittercard = true
+  twittercard = true
+  # darkmode = true # set true if you want to enforce dark mode
+  lightmode = true # set true if you want to enforce light mode

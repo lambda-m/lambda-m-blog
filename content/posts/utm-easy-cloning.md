@@ -1,7 +1,7 @@
 +++
 date = '2024-10-23T20:12:25+02:00'
 draft = false
-title = 'UTM Easy Clone & Deploy'
+title = 'UTM Easy Clone & Deploy idea'
 tags = ['UTM', 'HomeLab']
 +++
 
@@ -9,7 +9,7 @@ Looking for a low friction way to spin up VMs in [UTM](https://mac.getutm.app/) 
 
 `utmctl` provides some options for starting, sotpping and cloning machines
 
-```
+```console
 SUBCOMMANDS:
   list                    Enumerate all registered virtual machines.
   status                  Query the status of a virtual machine.
@@ -26,7 +26,6 @@ SUBCOMMANDS:
 ```
 
   This provides the basics, but some important settings cannot be changed from here. Most notably changing the MAC address of a cloned machine. In typical homelab scenarios for me, I want to use Shared Networking and after cloning a machine, perhaps multiple times, if they all have the same MAC address, the internal (QEMU?) DHCP server will assign the same IP address.
-
   I would like to be able to have a limited number of preconfigured VMs on the ready which I can clone using the least amount of effort possible. I should be able to give the VM a name, which should be its hostname, and add a few lines to my ssh config to be able to reach the machine using that name.
 
 ## Template VM prerequisites
@@ -39,9 +38,9 @@ SUBCOMMANDS:
 	- Backend services (ceph, incus, postgres, nginx, etc.)
 	- GUI tools (vscode, sublime text, browser, HTTPS client for API testing, etc.)
 
-Probably a handful of templates will need to be defined with a combination of additional softwares.
+A handful of templates will need to be defined with a combination of additional softwares.
 
-## 
+## How it should work
 
 I would ideally have a script that allows me to:
 
@@ -49,12 +48,12 @@ I would ideally have a script that allows me to:
 2. Ask for a new hostname
 
 
-It should result in a cloned VM, with a new name (in UTM) new MAC address and IPv4 address and it should allow me to immediately SSH into that host using a predefined config in ~/.ssh/config
+It should result in a cloned VM, with a new name (in UTM and within the VM) new MAC address and IPv4 address and it should allow me to immediately SSH into that host using a predefined config in ~/.ssh/config
 
 e.g.
 
 ```console
-> utmclone
+maarten@MBP ~ % utmclone
 
 Select Template:
 
@@ -68,16 +67,18 @@ Select Template:
 Cloning Debian 11 LTS... Done.
 Randomizing MAC Address... Done.
 Starting VM... Done.
+Changing hostname... Done.
 Found IPv4 Address: 192.168.64.72
 Setting SSH config:... Done.
 Adding to /etc/hosts... Done.
 
 You can now connect to your new machine "ssh my-new-clone"
 
->
+maarten@MBP ~ % ssh my-new-clone
+maarten@my-new-clone:~$
 ```
 
-Most of these things can be done using utmclone except as it stands, changing the MAC address. Luckily someone figured out how to do this using applescript! Although there are some limitations / caveats at first sight.
+Most of these things can be done using `utmclone` except as it stands, changing the MAC address. Luckily someone figured out how to do this using applescript! Although there are some limitations / caveats at first sight.
 
 ```bash
 #!/bin/bash
@@ -101,4 +102,4 @@ END
 
 Source: [ServerFault](https://serverfault.com/a/1162322) - The UTM applescript cheatsheet can be found [here](https://docs.getutm.app/scripting/cheat-sheet/)
 
-Perhaps it turns out to be easiest to do everything using applescript, as it seems it is able to 
+Perhaps it'll turn out to be easiest to do everything using applescript, as it seems it is able to do everything I need. To be continued...
