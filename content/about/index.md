@@ -5,5 +5,13 @@ title = 'About'
 +++
 
 Based, in The Netherlands; I dabble in Cloud Infrastructure and all things and data around it.
+  
 
-Inquiries: maarten@lambda-m.nl
+  
+
+
+| Target     |                 Coordinates |
+|------------|----------------------------:|
+| Inquiries:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |         maarten@lambda-m.nl |
+| Tweeter:   |    https://x.com/lambdam_nl |
+| GitHub:    | https://github.com/lambda-m |

@@ -1,11 +1,11 @@
 baseURL = 'https://lambda-m.nl/blog/'
 languageCode = 'en-us'
-title = 'Lambda M'
-theme = 'HugoTeX'
+title = '(Lambda M)'
+theme = 'LambdaM'
 enableInlineShortcodes = true
 
 [Params.Author]
-  name = "Maarten van der Woord"
+  name = "Maarten"
   abstract = """
   I'm an idiot.
   """
