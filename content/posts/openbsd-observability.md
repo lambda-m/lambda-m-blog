@@ -146,15 +146,14 @@ scrape_configs:
       - regex:
           expression: '^(?P<remote_addr>\S+) - (?P<remote_user>\S+) \[(?P<time_local>.*?)\] "(?P<request_method>\S+) (?P<request_uri>\S+) \S+" (?P<status>\d+) (?P<body_bytes_sent>\d+) "(?P<http_referer>[^"]*)" "(?P<http_user_agent>[^"]*)"'
       - labels:
-          remote_addr: "$1"
-          remote_user: "$2"
-          time_local: "$3"
-          request_method: "$4"
-          request_uri: "$5"
-          status: "$6"
-          body_bytes_sent: "$7"
-          http_referer: "$8"
-          http_user_agent: "$9"
+          remote_user:
+          time_local:
+          request_method:
+          request_uri:
+          status:
+          body_bytes_sent:
+          http_referer:
+          http_user_agent:
 ```
 
 There is penty to finetune here, apart from moving to structured logging for nginx but for now, it will do. Be mindful of using the right userid and token from grafana. The userid seems to be different for prometheus and loki endpoints. If it works, you should be able to see your log entries coming in with the fields properly labelled.
