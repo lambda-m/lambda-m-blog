@@ -1,6 +1,6 @@
 +++
 date = '2024-11-10T09:02:52+01:00'
-draft = true
+draft = false
 title = 'OpenBSD Observability'
 tags = ['OpenBSD', 'Observability']
 +++
