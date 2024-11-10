@@ -2,6 +2,7 @@
 date = '2024-10-27T08:28:19+01:00'
 draft = false
 title = 'UTMultiply'
+tags = ['UTM', 'HomeLab']
 +++
 
 I have created an initial version of my UTM Cloning script available [here](https://github.com/lambda-m/UTMultiply). It makes a bunch of assumptions on usage and setp, and requires templates to be set up in a certain way. The script takes care of a number of things to quickly spin up one or more machines for a project / experiment / itch.
