@@ -10,7 +10,7 @@ enableInlineShortcodes = true
   I'm an idiot.
   """
 [pagination]
-  pagerSize = 3
+  pagerSize = 10
 
 [Params]
   twittercard = true

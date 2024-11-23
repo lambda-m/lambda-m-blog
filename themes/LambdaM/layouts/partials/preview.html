@@ -1,0 +1,13 @@
+<article class="post-preview">
+  <div class="post-line">
+    <a href="{{ .Permalink }}" class="post-title">{{ .Title }}</a>
+    <span class="post-date">{{ .Date.Format "2006-01-02" }}</span>
+  </div>
+  {{ if .Params.tags }}
+  <div class="post-tags">
+    {{ range .Params.tags }}
+      <a href="{{ "/blog/tags/" | relLangURL }}{{ . | urlize }}" class="post-tag">#{{ . }}</a>
+    {{ end }}
+  </div>
+  {{ end }}
+</article>
